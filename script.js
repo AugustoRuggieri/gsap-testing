@@ -1,11 +1,6 @@
 setTimeout(() => console.log("Hello"), 0)
 console.log("world!")
 
-var tl = gsap.timeline({
-    repeat: 2,
-    repeatDelay: 1
-})
-
 gsap.timeline()
 .to(".left-box", {
     duration: 4,
@@ -26,19 +21,41 @@ gsap.timeline()
     ease: "elastic"
 }, "-=2")
 
-gsap.from(".box1", {
+gsap.timeline({
     scrollTrigger: {
-        trigger: ".section1",
-        start: "top center"
-    },
+        trigger: ".box1",
+        start: "center center",
+        toggleActions: "restart pause reverse pause",
+        scrub: true,
+        markers: true
+    }
+})
+.from(".box1", {
     x: -600,
+    duration: 5
   })
+.to(".box1", {
+    backgroundColor: "purple",
+  }, 2)
 gsap.from(".box2", {
     scrollTrigger: {
-        trigger: ".section1",
-        start: "top center"
+        trigger: ".box2",
+        start: "top center",
+        markers: true
     },
-    x: 600
+    x: 600,
+    duration: 5
   })
 
-var mySplitText = new SplitText("#quote");
+gsap.timeline()
+.from("#orange", {xPercent: -100})
+.from("#red", {xPercent: 100})
+
+  ScrollTrigger.create({
+    trigger: "#orange",
+    start: "top top",
+    end: "+=300px",
+    pin: true
+  })
+
+// var mySplitText = new SplitText("#quote");

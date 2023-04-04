@@ -118,3 +118,21 @@ main {
 .section2 {
     height: 100vh;
 }
+
+.container {
+    height: 100vh;
+    background-color: cadetblue;
+}
+
+.panel {
+    height: 100vh;
+    display: flex;
+}
+
+#orange {
+    background-color: orangered;
+}
+
+#red {
+    background-color: red;
+}
