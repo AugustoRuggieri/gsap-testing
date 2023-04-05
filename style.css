@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -117,22 +119,53 @@ main {
 
 .section2 {
     height: 100vh;
-}
-
-.container {
-    height: 100vh;
-    background-color: cadetblue;
-}
-
-.panel {
-    height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#orange {
-    background-color: orangered;
+.text-container {
+    overflow: hidden;
+    border: 2px solid black;
+    padding-top: 3rem;
 }
 
-#red {
-    background-color: red;
+#quote {
+    font-size: 8vh;
+    font-family: 'Syncopate', sans-serif;
+}
+
+.cards-container {
+    min-height: 100vh;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.card {
+    --spacing: 4rem;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background-color: #fff;
+    width: 60vw;
+    height: calc(100vh - var(--spacing) * 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: var(--spacing);
+    z-index: 3;
+}
+
+.card:nth-child(2) {
+    top: calc(var(--spacing) * 2);
+    z-index: 2;
+}
+
+.card:nth-child(3) {
+    top: calc(var(--spacing) * 3);
+    z-index: 1;
 }

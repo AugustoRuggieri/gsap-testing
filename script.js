@@ -47,15 +47,30 @@ gsap.from(".box2", {
     duration: 5
   })
 
-gsap.timeline()
-.from("#orange", {xPercent: -100})
-.from("#red", {xPercent: 100})
+let mySplitText = new SplitText("#quote", {type: "chars"});
+let chars = mySplitText.chars;
 
-  ScrollTrigger.create({
-    trigger: "#orange",
+gsap.from(chars, {
+  yPercent: 130,
+  stagger: 0.05,
+  ease: "back-out",
+  duration: .6,
+  scrollTrigger: {
+    trigger: "#quote",
+    start: "top 80%",
+    toggleActions: "restart pause reverse pause"
+  }
+})
+
+gsap.set(".card", {position: "absolute"})
+
+gsap.to(".card", {
+  y: -50,
+  stagger: .5,
+  scrollTrigger: {
+    trigger: ".cards-container",
     start: "top top",
-    end: "+=300px",
-    pin: true
-  })
+    end: "+=2000px"
+  }
+})
 
-// var mySplitText = new SplitText("#quote");
